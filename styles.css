@@ -1,0 +1,183 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+.header{
+    background-color: #024050;
+    display: flex;
+    justify-content: space-between;         
+    align-items: center;       
+    width: 97vw;
+    padding: 1.5vw;
+    /* position: fixed; */
+    color: #cdf5ff;
+}
+#header-item{
+    margin-top: 1vw;
+}
+.search{
+    width: 35%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.search-icon {
+    margin: 1%;
+}
+.search input {
+    width: 80%;
+    height: 100%;
+}
+ input:focus, input:active, button:focus, button:active, select:focus,select:active{
+    border: none;
+    outline: none;
+}
+#search {
+    background-color:#ecfbff;
+    color: black;
+    padding: 0px 10px 0px 10px;
+    cursor: pointer;
+}
+#menu-item{
+    margin: 1vw;
+    color:#cdf5ff;
+    text-decoration:#cdf5ff;
+    font-size: 1em
+}
+.search-bar {
+    display: flex;
+    justify-content: space-between;         
+    align-items: center;       
+    width: 100vw;
+    padding: 1vw;
+    color: #cdf5ff;
+    background-color: #5a7f88;
+}
+#city-select {
+    width: 200px;
+    padding: 3px;
+    cursor: pointer;
+}
+#theatre-select {
+    width: 200px;
+    padding: 3px;
+    cursor: pointer;
+}
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    flex-direction: row;
+    cursor: pointer;
+    width: 4%;
+}
+#filter-view{
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40%;
+    position: fixed;
+    top: 13.5%;
+    right: 0;
+    background-color: #5a7f88;
+    padding: 2% 2% 0 2%;
+}
+#filter-button{
+    margin-top: 3%;   
+    /* background-color: #c3e8f1; */
+    /* color: #ffffff; */
+    padding: 2%;
+}
+.recommendation-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#leftscroll{
+
+margin: 1%;
+cursor: pointer;
+}
+#rightscroll{
+
+margin: 1%;
+cursor: pointer;
+}
+
+.movie-recommendation {
+    margin-top: 2%;
+    display: flex;    
+    overflow-x: auto;    
+    scroll-behavior: smooth;
+    /* background-color: #6da0ad; */
+}
+.movie-recommendation::-webkit-scrollbar{
+    overflow: hidden;
+}
+.movie-data {
+    width: 150px;
+    background-color:#5a7f88;
+    top:45.5%;
+    color:#cdf5ff;
+    font-size: smaller;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-view{
+    margin:2% 2% 2% 1%;
+    text-align: center;
+}
+
+.movies{
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #024050;
+}
+
+.login-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65vh;
+    margin-top: 10vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+.form-input {
+    width: 70%;
+    margin: 3%;
+    height: 40;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: #008080;
+}
+
+
+.form-button {
+    width: 70%;
+    margin: 5%;
+    height: 40;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}
