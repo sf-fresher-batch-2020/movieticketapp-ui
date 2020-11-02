@@ -6,43 +6,43 @@ var cityObject = [
 
 var theatreObject = {
     '1' : [
-        'Mayajal|100','Bapulapadu|101','Vishakhapatnam|102'             
+        'Mayajal|100','The Forum Vijaya Mall|101','Luxe Cinemas|102'             
     ],
     '2' : [
-        'Karpagam Cinemas|200', 'Shanthi-Saradha|201','Murugan|202','Central Theatre|203','Sakthi Theatre|204'              
+        'INOX Prozone Mall INOX Theatre|200', 'The Cinema Brookefields |201',' Fun Cinemas|202','Central Theatre|203','Sakthi Theatre|204'              
     ],
     '3' : [
-        'Duliyajan|300','Jorhat|301'            
+        'Carnival Cinemas|300','J Cinemas|301'            
     ],
     '4' : [
-        ' Patna|400','Gaya|401'
+        'Maharaja Cinemas|400','Vsp Cinema Hall|401'
     ],
     '5' : [
-        'Raipur|500'
+        'FOIN XD CINEMA|500','Government Open Air Theathre|501'
     ],
     '6' : [
-        'Panaji|600'
+        'Thinnappa Theatre|600','Ajantha Ellora Cinemas|601'
     ],
     '7' : [
-        'Ambika Cinemas|700','Jazz & Arsh|701','Priya Cinemas|702','Ganesh Theatre|703'
+        'Ambika Cinemas|700','Jazz & Arsh|701',' INOX Vishaal De Mall|702','Ganesh Theatre|703'
     ],
     '8' : [
-        'Gurgaon|800'
+        'Arrs Cinemas|800','Big Cinemas|801'
     ],
     '9' : [
-        'Kullu|900'
+        'L A Cinemas|900','Cauvery Cinema Hall|901'
     ],
     '10': [
-        'Ranchi|1000'
+        'PVR Cinemas|1000','RAM MUTHURAM CINEMAS|1001','Bombay Theatre|1002','TPV Multiplex|1003'
     ],
     '11': [
-        'Bangalore|1100'
+        'Usha Multiplex|1100','Cine Park Theatre|1101'
     ],
     '12': [
-        'Kochi|1200'
+        'PVR Cinemas|1200','Aascars Cinemas Vellore|1201'
     ],
     '13': [
-        'Bhopal |1300'
+        'Apsara Cinema Hall |1300','Chitras Cinema Hall|1301'
     ]
 };
 
@@ -63,7 +63,6 @@ function createOption(elem, array) {
         opt.value = item[1];
         fragment.appendChild(opt);
     });
-
     sel.appendChild(fragment);
 }	
 $('#city-select').on('change', function(e) {
