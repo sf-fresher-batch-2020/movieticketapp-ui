@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Setup Data to LocalStorage</h3>
+
+    <table>
+        <thead><tr><th>DataType</th><th>Action</th></tr></thead>
+        <tbody>
+            <tr><td> City </td><td><button onclick="setupCityData()">Load Data</button></td></tr>
+
+        </tbody>
+
+
+    </table>
+
+
+    <script src="theatrelist.js"></script>
+    <script>
+
+        function setupCityData(){ 
+              localStorage.setItem("CITY", JSON.stringify(cityObject));
+              localStorage.setItem("THEATER", JSON.stringify(theatreObject));
+              localStorage.setItem("MOVIES", JSON.stringify(movieObject));
+        }
+    </script>
+
+
+</body>
+</html>
