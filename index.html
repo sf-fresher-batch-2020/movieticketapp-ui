@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMovieBooking</title>
     <link rel="stylesheet" href="styles.css">
-     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,48 +31,20 @@
 
             </select>
         </div>
-        <div class="filters" onmouseenter="filters()" onmouseleave="filterClose()">
-            <img src="icons/filter.png" height="15px" width="15px">
-            <span id="filter">Filter</span>
+    </div>
+    <div class="movies">
+        <div class="recommendation-row">
+            <div id="l-scroll">
+                <span onclick="scrollL()"><img src="icons/left.png" height="80px" width="50px"> </span>
+            </div>
 
-            <div id="filter-view">
-                <span>
-                    <input id="action" type="checkbox" value="Action/Adventure" />
-                    <label for="action">Action/Adventure</label>
-                </span>
-                <span>
-                    <input id="animation" type="checkbox" value="Animation" />
-                    <label for="animation">Animation</label>
-                </span>
-                <span>
-                    <input id="comedy" type="checkbox" value="Comedy" />
-                    <label for="comedy">Comedy</label>
-                </span>
-                <span>
-                    <input id="drama" type="checkbox" value="Drama" />
-                    <label for="drama">Dramatic</label>
-                </span>
-                <span>
-                    <input id="heist" type="checkbox" value="Heist" />
-                    <label for="heist">Heist</label>
-                </span>
-                <span>
-                    <input id="horror" type="checkbox" value="Horror" />
-                    <label for="horror">Horror</label>
-                </span>
-                <span>
-                    <input id="romance" type="checkbox" value="Romance" />
-                    <label for="romance">Romance</label>
-                </span>
-                <span>
-                    <input id="thriller" type="checkbox" value="Thriller" />
-                    <label for="thriller">Thriller</label>
-                </span>
-                <button id="filter-button" onclick="filterClose()">Done</button>
+            <div class="movie-recommendation" id="movie-select">
+            </div>
+            <div id="r-scroll">
+                <span onclick="scrollR()"><img src="icons/right.png" height="80px" width="50px"> </span>
             </div>
         </div>
     </div>
-
 
     <div class="movies">
         <h2>Popular now</h2>
@@ -149,15 +121,18 @@
         </div>
     </div>
 
-
-
-
     <script>
         function scrollRight() {
             document.getElementById('popular').scrollBy(800, 0);
         }
         function scrollback() {
             document.getElementById('popular').scrollBy(-800, 0);
+        }
+        function scrollR() {
+            document.getElementById('movie-select').scrollBy(800, 0);
+        }
+        function scrollL() {
+            document.getElementById('movie-select').scrollBy(-800, 0);
         }
         function filters() {
             document.getElementById('filter-view').style.display = "flex";
@@ -166,9 +141,10 @@
             document.getElementById('filter-view').style.display = "none";
         }
 
+
     </script>
-    <script src="theatrelist.js"></script>
-     <script>
+    <script src="theatrelist.js" defer></script>
+    <script>
         $("#header").load("header.html");
     </script>
 </body>
