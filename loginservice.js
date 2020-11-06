@@ -1,7 +1,7 @@
 class LoginService {
     login = function(email, password){
         var usersTemp = JSON.parse(localStorage.getItem("USERS"));
-        var users= usersTemp ? usersTemp: [];     
+        var users = usersTemp ? usersTemp: [];     
         let exists = false;   
         for(let obj of users)
         {
@@ -12,6 +12,7 @@ class LoginService {
                 break;
             }
         }
+        console.log(exists);
         return exists;
     }
 }
