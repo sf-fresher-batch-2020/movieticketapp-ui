@@ -31,6 +31,51 @@ insert into user (user_id,name,email,password,dob,gender,role) values ( 1,'celsh
 
 select * from user;
 
+/* .. city .. */ 
+
+
+create table cities(
+
+city_id int primary key auto_increment,
+city_name varchar(50) not null
+);
+
+
+ /* .. Load Sample Data .. */ 
+ 
+insert into cities (city_name) values ( 'chennai');
+insert into cities (city_name) values ('Coimbatore');
+insert into cities (city_name) values ('Dindigul');
+insert into cities (city_name) values ('erode');
+insert into cities (city_name) values ('Kanniyakumari');
+
+/* .. List All cities .. */ 
+
+select * from cities;
+
+
+/* .. theater.. */ 
+
+
+create table theaters(
+
+theater_id int primary key auto_increment,
+theater_name varchar(50) not null,
+foreign key(theater_id) references cities(city_id)
+);
+
+
+ /* .. Load Sample Data .. */ 
+ 
+insert into theaters (theater_name) values ( 'inox');
+insert into theaters (theater_name) values ('mayajal');
+insert into theaters (theater_name) values ('the forum vijaya mall');
+insert into theaters (theater_name) values ('The Cinema Brookefields');
+insert into theaters (theater_name) values ('Big Cinemas');
+
+/* .. List All cities .. */ 
+
+select * from theaters;
 
 
 /* .. movie booking .. */ 
@@ -38,10 +83,7 @@ select * from user;
 drop table movies;
 create table movies 
 ( 
-id int primary key auto_increment,
-movie_id int not null,
-city varchar(50) not null,
-theater varchar(50) not null,
+movie_id int primary key auto_increment,
 movie_name varchar(50) not null,
 active boolean not null default 1,
 created_date timestamp not null default current_timestamp,
@@ -55,15 +97,15 @@ select * from movies;
 
 /* .. Load Sample Data .. */ 
  
-insert into movies (movie_id,city,theater,movie_name,image) values ( '1', 'chennai', 'inox', 'iruttu', 'aaa.jpg');
+insert into movies (movie_name,image) values ( 'iruttu', 'aaa.jpg');
 
-insert into movies (movie_id,city,theater,movie_name,image) values ( '2', 'madurai', 'inox', 'iruttu', 'aaa.jpg');
+insert into movies (movie_name,image) values ('iruttu', 'aaa.jpg');
 
-insert into movies (movie_id,city,theater,movie_name,image) values ( '3', 'coimbatore', 'inox', 'iruttu', 'aaa.jpg');
+insert into movies (movie_name,image) values ( 'iruttu', 'aaa.jpg');
 
 /* .. delete a movie .. */
 
-delete from movies where id =1;
+delete from movies where movie_id =1;
 
 
 /* .. booking .. */
@@ -71,24 +113,23 @@ delete from movies where id =1;
 drop table booking;
 create table booking 
 ( 
-id bigint primary key auto_increment,
-movie_id int not null,
-name varchar(50) not null,
+booking_id int not null,
+customer_name varchar(50) not null,
 seat_no varchar(50) not null,
-movie_name varchar(50) not null,
-image varchar(50) not null,
+booked_movie_name varchar(50) not null,
+movie_image varchar(50) not null,
 active boolean not null default 1,
 booked_date timestamp not null default current_timestamp,
 modified_date timestamp not null default current_timestamp on update current_timestamp,
-foreign key(movie_id) references movies(id)
+foreign key(booking_id) references movies(movie_id)
+
 );
 
 /* .. Load Sample Data .. */ 
  
-insert into booking (movie_id,name,movie_name,seat_no,image) values ( '1', 'celshia', 'iruttu', 2, 'aaa.jpg');
+insert into booking (booking_id,customer_name,seat_no,booked_movie_name,movie_image) values ( '1','celshia', '2', 'iruttu',  'aaa.jpg');
 
 /* .. view booking .. */ 
 
 select * from booking;
 
-delete from accounts where id =3;
