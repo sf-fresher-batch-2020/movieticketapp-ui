@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="popular()">
     <header id="header">
         <!-- Load Header content-->
     </header>
@@ -19,13 +19,13 @@
             <input type="text" placeholder="Search for movies " />
             <button id="search">Search</button>
         </div>
-        <div class="cities">
+        <div class="cities" id="cities">
             <select id="city-select">
                 <option value="">Select your City</option>
 
             </select>
         </div>
-        <div class="cities">
+        <div class="cities" id="theaters">
             <select id="theatre-select">
                 <option value="">Select your Theatre</option>
 
@@ -46,74 +46,17 @@
         </div>
     </div>
 
-    <div class="movies">
-        <h2>Popular now</h2>
+    <div class="movies" id="all-movies">
+        <h2>List Of Movies</h2>
         <div class="recommendation-row">
             <div id="leftscroll">
                 <span onclick="scrollback()"><img src="icons/left.png" height="80px" width="50px"> </span>
             </div>
 
             <div class="movie-recommendation" id="popular">
-                <div class="movie-view">
-                    <img src="images/aaa.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/bbb.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>DARBAR</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/eee.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>IRUTTU</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/ddd.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/aaa.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/fff.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/ggg.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/hhh.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/iii.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
-                <div class="movie-view">
-                    <img src="images/ddd.jpg" height="200px" width="150px">
-                    <div class="movie-data">
-                        <h3>OTHTHAIKU OTHTHA</h3>
-                    </div>
-                </div>
+              
+                <!-- MOVIES TO BE DISPLAYED  -->
+            
             </div>
             <div id="rightscroll">
                 <span onclick="scrollRight()"><img src="icons/right.png" height="80px" width="50px"> </span>
@@ -122,6 +65,7 @@
     </div>
 
     <script>
+        
         function scrollRight() {
             document.getElementById('popular').scrollBy(800, 0);
         }
@@ -141,6 +85,30 @@
             document.getElementById('filter-view').style.display = "none";
         }
 
+        // let serverUrl = "https://moviebooking-server.herokuapp.com/api";
+
+        // // Get all Users
+        // let apiUrl = serverUrl + "/cities";
+        // console.log(apiUrl);
+        // // Call backend api
+        // fetch(apiUrl).then(res => res.json()).then(res => {
+        //     console.log(res);
+        //     document.querySelector("#cities").innerHTML = JSON.stringify(res);
+        // });
+        // let apiurl = serverUrl + "/theaters";
+        // console.log(apiurl);
+        // // Call backend api
+        // fetch(apiurl).then(res => res.json()).then(res => {
+        //     console.log(res);
+        //     document.querySelector("#theaters").innerHTML = JSON.stringify(res);
+        // });
+        // let Apiurl = serverUrl + "/movies";
+        // console.log(Apiurl);
+        // // Call backend api
+        // fetch(Apiurl).then(res => res.json()).then(res => {
+        //     console.log(res);
+        //     document.querySelector("#movies").innerHTML = JSON.stringify(res);
+        // });
 
     </script>
     <script src="theatrelist.js" defer></script>
