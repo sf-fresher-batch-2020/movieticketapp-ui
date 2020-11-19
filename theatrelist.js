@@ -55,91 +55,349 @@ var movieObject = {
         },
         {
             'id': '02',
-            'name': 'SOORARAI POTRU|100,000,001',
+            'name': 'SOORARAI POTRU',
             'imgpath': 'images/bbb.jpg'
         },
         {
             'id': '03',
-            'name': 'SOORARAI POTRU|100,000,001',
+            'name': 'SOORARAI POTRU',
             'imgpath': 'images/ccc.jpg'
         },
         {
             'id': '04',
-            'name': 'SOORARAI POTRU|100,000,001',
+            'name': 'SOORARAI POTRU',
             'imgpath': 'images/ddd.jpg'
         },
         {
             'id': '05',
-            'name': 'SOORARAI POTRU|100,000,001',
+            'name': 'SOORARAI POTRU',
             'imgpath': 'images/eee.jpg'
         }
     ],
     '101': [
         {
-            'name': 'SOORARAI POTRU|100,000,001',
+            'id': '01',
+            'name': 'SOORARAI POTRU',
             'imgpath': 'images/bbb.jpg'
         }
     ],
     '102': [
-        'AVENGERS-END GAME|100,000,002',
-        'MIRROR|100,200,002',
+        {
+            'id': '01',
+            'name': 'SOORARAI POTRU',
+            'imgpath': 'images/bbb.jpg'
+        }
     ],
     '200': [
-        'DRIVE|200,000,000',
-        'CHICHORE|200,000,001',
-        'NAMMA VEETU PILLAI|200,000,002'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '201': [
-        'ICICI Bank Ltd. - Naharlagun|200,000,001',
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '202': [
-        'ICICI Bank Ltd. - Bomdila|200,000,002',
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '203': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '204': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '300': [
-        'ICICI Bank Ltd. - Duliyajan|300,000,000',
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '301': [
-        'ICICI Bank Ltd. - Jorhat|300,000,001',
-        'ICICI Bank Ltd. - Jorhat - Marwari Patty|300,100,003'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '400': [
-        'ICICI Bank Ltd. - Patna|400,000,000',
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '401': [
-        'ICICI Bank Ltd. - Gaya|400,000,001',
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '500': [
-        'ICICI Bank Ltd. - Raipur - Civil Lines|500,000,000',
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '501': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '600': [
-        'ICICI Bank Ltd. - Panaji|600,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '601': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '700': [
-        'ICICI Bank Ltd. - Ahmedabad - JMC House|700,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '701': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '702': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '800': [
-        'ICICI Bank Ltd. - Gurgaon - Cyber Greens|800,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '801': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '900': [
-        'ICICI Bank Ltd. - Kullu|900,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '901': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '1000': [
-        'ICICI Bank Ltd. - Ranchi|1000,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '1001': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '1002': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '1003': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '1100': [
-        'ICICI Bank Ltd. - Bangalore - M G Road|1100,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '1101': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '1200': [
-        'ICICI Bank Ltd. - Kochi - Kadavantara|1200,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '1201': [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
     ],
     '1300': [
-        'ICICI Bank Ltd. - Bhopal - M P Nagar - Zone II|1300,000,000'
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        }
+    ],
+    '5000' : [
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        },
+        {
+            'id': '02',
+            'name': 'SOORARAI POTRU',
+            'imgpath': 'images/bbb.jpg'
+        },
+        {
+            'id': '03',
+            'name': 'DARBAR',
+            'imgpath': 'images/fff.jpg'
+        },
+        {
+            'id': '04',
+            'name': 'POOVAE UNAKAGA',
+            'imgpath': 'images/ddd.jpg'
+        },
+        {
+            'id': '05',
+            'name': 'MOOKUTHI AMMAN',
+            'imgpath': 'images/eee.jpg'
+        },
+        {
+            'id': '06',
+            'name': 'IRANDAM ULAGAM',
+            'imgpath': 'images/ggg.jpg'
+        },
+        {
+            'id': '07',
+            'name': 'THERI',
+            'imgpath': 'images/hhh.jpg'
+        },
+        {
+            'id': '08',
+            'name': 'NAAN MAGAAN ALLA',
+            'imgpath': 'images/iii.jpg'
+        },
+        {
+            'id': '09',
+            'name': 'UNAKUM ENAKUM',
+            'imgpath': 'images/ddd.jpg'
+        },
+        {
+            'id': '10',
+            'name': 'SINGAM',
+            'imgpath': 'images/eee.jpg'
+        },
+        {
+            'id': '01',
+            'name': 'IRUTTU',
+            'imgpath': 'images/aaa.jpg'
+        },
+        {
+            'id': '02',
+            'name': 'SOORARAI POTRU',
+            'imgpath': 'images/bbb.jpg'
+        },
+        {
+            'id': '03',
+            'name': 'DARBAR',
+            'imgpath': 'images/fff.jpg'
+        },
+        {
+            'id': '04',
+            'name': 'POOVAE UNAKAGA',
+            'imgpath': 'images/ddd.jpg'
+        },
+        {
+            'id': '05',
+            'name': 'MOOKUTHI AMMAN',
+            'imgpath': 'images/eee.jpg'
+        }
     ]
+    
 };
 window.onload = function () {
     // console.log(cityObject);
     createOption("city-select", cityObject);
+    popular();
 }
+function popular() {
+    var mainContainer = document.getElementById('popular');
+    var data = movieObject[5000];
+    mainContainer.setAttribute('class', 'movie-recommendation');
+    for (var i = 0; i < data.length; i++) {
+        var div = document.createElement("div");
+        div.setAttribute('class', 'movie-view');
+        div.setAttribute('id', data[i].id);
+        var img = document.createElement("img");
+        var indiv = document.createElement("div");
+        var h3 = document.createElement("h3");
+        img.setAttribute('src', data[i].imgpath);
+        img.setAttribute('height', '200px');
+        img.setAttribute('width', '150px');
+        indiv.setAttribute('class', 'movie-data');
+        h3.innerHTML = data[i].name;
+        indiv.appendChild(h3);
+        div.appendChild(img);
+        div.appendChild(indiv);
+        mainContainer.appendChild(div);
+    }
+}
+
 function createOption(elem, array) {
     var sel = document.getElementById(elem);
     var fragment = document.createDocumentFragment();
@@ -152,14 +410,13 @@ function createOption(elem, array) {
         fragment.appendChild(opt);
     });
     sel.appendChild(fragment);
-    
+   
 }
 $('#city-select').on('change', function (e) {
     var value = $(this).val();
     // console.log(theatreObject["" + value + ""]);
     $('#theatre-select').find("option:gt(0)").remove();
     createOption('theatre-select', theatreObject['' + value + '']);
-
 });
 
 $('#theatre-select').on('change', function (e) {
@@ -168,7 +425,7 @@ $('#theatre-select').on('change', function (e) {
     var mainContainer = document.getElementById('movie-select');
     mainContainer.setAttribute('class', 'movie-recommendation');
     var data = movieObject['' + value + ''];
-
+    
     for (var i = 0; i < data.length; i++) {
         var div = document.createElement("a");
         div.setAttribute('class', 'movie-view');
@@ -187,5 +444,5 @@ $('#theatre-select').on('change', function (e) {
         div.appendChild(indiv);
         mainContainer.appendChild(div);
     }
-
+    
 });
