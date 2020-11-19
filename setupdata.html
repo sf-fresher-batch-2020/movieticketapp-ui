@@ -24,8 +24,21 @@
 
         function setupCityData(){ 
               localStorage.setItem("CITY", JSON.stringify(cityObject));
+              var retrievedObject = localStorage.getItem('CITY');
+              console.log('retrievedObject: ', JSON.parse(retrievedObject));
               localStorage.setItem("THEATER", JSON.stringify(theatreObject));
+              var retrievedObject = localStorage.getItem('THEATER');
+              console.log('retrievedObject: ', JSON.parse(retrievedObject));
               localStorage.setItem("MOVIES", JSON.stringify(movieObject));
+              var retrievedObject = localStorage.getItem('MOVIES');
+              console.log('retrievedObject: ', JSON.parse(retrievedObject));
+let movies = JSON.parse(localStorage.getItem("MOVIES")) || [];
+let content= "";
+for(let movie of movies){
+content+=`<tr><td>${movie.movies}</td></tr>`;
+}
+document.querySelector("#moviesTable").innerHTML = content;
+              
         }
     </script>
 
