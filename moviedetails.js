@@ -1,30 +1,46 @@
-class ShowMovie {
-    movie = function (id, val) {
+class movieDetails {
+    detail = function (id, val) {
         var data = movieObject['' + val + ''];
-        var mainContainer = document.getElementById('movie-book');
+        var mainContainer = document.getElementById('movie-details-page');
 
         for (var i = 0; i < data.length; i++) {
             if (data[i].id == id) {
                 var div = document.createElement("div");
-                div.setAttribute('class', 'movie-view');
+                div.setAttribute('class', 'movie-detail');
                 var img = document.createElement("img");
                 var indiv = document.createElement("div");
-                var h3 = document.createElement("h3");
+                var h2 = document.createElement("h2");
+                var story = document.createElement("h4");
+                var trailers = document.createElement("a");
+                var star = document.createElement("h4");
+                var directors = document.createElement("h4");
                 var btn = document.createElement("button");
                 img.setAttribute('src', data[i].imgpath);
-                img.setAttribute('height', '200px');
-                img.setAttribute('width', '150px');
-                indiv.setAttribute('class', 'movie-data');
-                h3.innerHTML = data[i].name;
+                img.setAttribute('height', '400px');
+                img.setAttribute('width', '300px');
+                indiv.setAttribute('class', 'detail-data');
+                h2.innerHTML = data[i].name;
+                story.innerHTML = data[i].storyline;
+                trailers.innerHTML = 'Watch trailer';
+                trailers.setAttribute('href',data[i].trailer)
+                star.innerHTML = 'Stars : '+data[i].stars;
+                directors.innerHTML = 'Director: '+data[i].director;
                 btn.setAttribute('type', 'submit');
                 btn.setAttribute('value', 'Book');
                 btn.setAttribute('class', 'book-button');
-
-                btn.setAttribute('onclick', 'booknow()');
+                btn.setAttribute('href','movie.html?id='+data[i].id+'&val='+val);
+                btn.setAttribute('onclick','bookpage()');
                 btn.innerHTML = 'Book';
-                indiv.appendChild(h3);
+                indiv.appendChild(h2);
+                indiv.appendChild(story);
+                indiv.appendChild(star);
+                indiv.appendChild(directors);
+                indiv.appendChild(trailers);
                 div.appendChild(img);
-                div.appendChild(indiv);
+                div.appendChild(indiv);            
+                mainContainer.appendChild(div);                
+                mainContainer.appendChild(btn);
+                break;
             }
         }
     }
