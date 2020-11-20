@@ -7,36 +7,39 @@
     <title>MyMovieBooking</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="moviedetails.js"></script>
+    <script src="movieDetails.js"></script>
     <script src="theatrelist.js"></script>
 </head>
 
-<body onload="loadmovie()">
+<body onload="movieDetail()">
     <header id="header">
         <!-- Load Header content-->
     </header>
-    <div class="movie-page" >
-       
-        <div class="book-view" id="movie-book">
+    <div id="movie-details-page">
 
-
-        </div>
     </div>
-    <script >   
-        function loadmovie() {
-            var showmovieobj = new ShowMovie();
+    <script>
+        function movieDetail() {
+            var moviedetailobj = new movieDetails();
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const id= urlParams.get('id');
-            const val= urlParams.get('val');
-            console.log(id);
-            showmovieobj.movie(id,val);
+            const id = urlParams.get('id');
+            const val = urlParams.get('val');
+            moviedetailobj.detail(id, val);
+        }
+        function bookpage() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const id = urlParams.get('id');
+            const val = urlParams.get('val');
+            var url = 'http://127.0.0.1:5501/movie.html?id='+id+'&val='+val;
+            window.location.href = url;
         }
  
-</script>
-<script>
-    $("#header").load("header.html");
-</script>
+    </script>
+    <script>
+        $("#header").load("header.html");
+    </script>
 
 </body>
 
