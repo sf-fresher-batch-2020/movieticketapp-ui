@@ -226,3 +226,31 @@ cursor: pointer;
     color: white;
     cursor: pointer;
 }
+
+/********************style for**************viewmoviedetails.html**********************/
+
+#movie-details-page{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.movie-detail{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    
+}
+ .detail-data {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     height: 100%;
+     width: 50vw;
+ }
