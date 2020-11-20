@@ -51,22 +51,38 @@ var movieObject = {
         {
             'id': '01',
             'name': 'IRUTTU',
-            'imgpath': 'images/aaa.jpg'
+            'imgpath': 'images/aaa.jpg',
+            'trailer':'https://www.youtube.com/watch?v=h9ZKnjRsMps',
+            'storyline': 'A cop who takes charge at a police station in a hill station goes after the reasons behind a few unnatural deaths which seem mysterious like never before.',
+            'director':'V.Z. Dhorai',
+            'stars': 'Sundar C, Sakshi Chaudhary, VTV Ganesh'
         },
         {
             'id': '02',
             'name': 'SOORARAI POTRU',
-            'imgpath': 'images/bbb.jpg'
+            'imgpath': 'images/bbb.jpg',
+            'trailer':'https://www.youtube.com/watch?v=h9ZKnjRsMps',
+            'storyline': 'A cop who takes charge at a police station in a hill station goes after the reasons behind a few unnatural deaths which seem mysterious like never before.',
+            'director':'V.Z. Dhorai',
+            'stars': 'Sundar C, Sakshi Chaudhary, VTV Ganesh'
         },
         {
             'id': '03',
             'name': 'SOORARAI POTRU',
-            'imgpath': 'images/ccc.jpg'
+            'imgpath': 'images/ccc.jpg',
+            'trailer':'https://www.youtube.com/watch?v=h9ZKnjRsMps',
+            'storyline': 'A cop who takes charge at a police station in a hill station goes after the reasons behind a few unnatural deaths which seem mysterious like never before.',
+            'director':'V.Z. Dhorai',
+            'stars': 'Sundar C, Sakshi Chaudhary, VTV Ganesh'
         },
         {
             'id': '04',
             'name': 'SOORARAI POTRU',
-            'imgpath': 'images/ddd.jpg'
+            'imgpath': 'images/ddd.jpg',
+            'trailer':'https://www.youtube.com/watch?v=h9ZKnjRsMps',
+            'storyline': 'A cop who takes charge at a police station in a hill station goes after the reasons behind a few unnatural deaths which seem mysterious like never before.',
+            'director':'V.Z. Dhorai',
+            'stars': 'Sundar C, Sakshi Chaudhary, VTV Ganesh'
         },
         {
             'id': '05',
@@ -380,8 +396,10 @@ function popular() {
     var data = movieObject[5000];
     mainContainer.setAttribute('class', 'movie-recommendation');
     for (var i = 0; i < data.length; i++) {
-        var div = document.createElement("div");
+        var div = document.createElement("a");
         div.setAttribute('class', 'movie-view');
+        div.setAttribute('href','viewmoviedetails.html?id='+data[i].id+'&val=5000');
+
         div.setAttribute('id', data[i].id);
         var img = document.createElement("img");
         var indiv = document.createElement("div");
@@ -429,7 +447,7 @@ $('#theatre-select').on('change', function (e) {
     for (var i = 0; i < data.length; i++) {
         var div = document.createElement("a");
         div.setAttribute('class', 'movie-view');
-        div.setAttribute('href','movie.html?id='+data[i].id+'&val='+value);
+        div.setAttribute('href','viewmoviedetails.html?id='+data[i].id+'&val='+value);
         div.setAttribute('id', data[i].id);        
         var img = document.createElement("img");
         var indiv = document.createElement("div");
