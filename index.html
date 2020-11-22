@@ -7,6 +7,7 @@
     <title>MyMovieBooking</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
 </head>
 
 <body onload="popular()">
@@ -54,9 +55,9 @@
             </div>
 
             <div class="movie-recommendation" id="popular">
-              
+
                 <!-- MOVIES TO BE DISPLAYED  -->
-            
+
             </div>
             <div id="rightscroll">
                 <span onclick="scrollRight()"><img src="icons/right.png" height="80px" width="50px"> </span>
@@ -64,8 +65,9 @@
         </div>
     </div>
 
+    <script src="theatrelist.js" defer></script>
     <script>
-        
+
         function scrollRight() {
             document.getElementById('popular').scrollBy(800, 0);
         }
@@ -85,33 +87,70 @@
             document.getElementById('filter-view').style.display = "none";
         }
 
-        // let serverUrl = "https://moviebooking-server.herokuapp.com/api";
+        let serverUrl = "https://moviebooking-server.herokuapp.com/api";
 
-        // // Get all Users
-        // let apiUrl = serverUrl + "/cities";
-        // console.log(apiUrl);
-        // // Call backend api
-        // fetch(apiUrl).then(res => res.json()).then(res => {
-        //     console.log(res);
-        //     document.querySelector("#cities").innerHTML = JSON.stringify(res);
-        // });
-        // let apiurl = serverUrl + "/theaters";
-        // console.log(apiurl);
-        // // Call backend api
-        // fetch(apiurl).then(res => res.json()).then(res => {
-        //     console.log(res);
-        //     document.querySelector("#theaters").innerHTML = JSON.stringify(res);
-        // });
-        // let Apiurl = serverUrl + "/movies";
-        // console.log(Apiurl);
-        // // Call backend api
-        // fetch(Apiurl).then(res => res.json()).then(res => {
-        //     console.log(res);
-        //     document.querySelector("#movies").innerHTML = JSON.stringify(res);
-        // });
+        function showCityFilter() {
+
+            // // Get all Users
+            let apiUrl = serverUrl + "/cities";
+            console.log(apiUrl);
+            // // Call backend api
+            fetch(apiUrl).then(res => res.json()).then(res => {
+                console.log(res);
+                createOption("city-select", res);
+
+                //document.querySelector("#cities").innerHTML = JSON.stringify(res);
+            });
+        }
+
+        function showTheatreFilter(cityId) {
+
+            let apiurl = serverUrl + "/theaters";
+            console.log(apiurl);
+            // // Call backend api
+            fetch(apiurl).then(res => res.json()).then(res => {
+                console.log(res);
+                let theatres = res[cityId];
+                createOption("theatre-select", theatres);
+                //document.querySelector("#theaters").innerHTML = JSON.stringify(res);
+            });
+        }
+
+        function getTheatreMovies(theatreId){
+
+        }
+
+        function showMovies() {
+            let Apiurl = serverUrl + "/movies";
+            console.log(Apiurl);
+            //Call backend api
+            fetch(Apiurl).then(res => res.json()).then(res => {
+                console.log(res);
+                localStorage.setItem("MOVIES", JSON.stringify(res));
+                let movies = _.uniqBy(Object.values(res).flat(), 'name');
+                console.log(movies);
+                popular(movies)
+               // document.querySelector("#movies").innerHTML = JSON.stringify(res);
+            });
+        }
+
+
+        $('#city-select').on('change', function (e) {
+    var value = $(this).val();
+     console.log(value);
+    $('#theatre-select').find("option:gt(0)").remove();
+    showTheatreFilter(value);
+});
+
+        showCityFilter();
+        showMovies();
+
+
+
+
 
     </script>
-    <script src="theatrelist.js" defer></script>
+
     <script>
         $("#header").load("header.html");
     </script>
