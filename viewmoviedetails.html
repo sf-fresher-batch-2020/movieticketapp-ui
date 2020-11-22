@@ -23,16 +23,16 @@
             var moviedetailobj = new movieDetails();
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const id = urlParams.get('id');
-            const val = urlParams.get('val');
+            const id = urlParams.get('movieId');
+            const val = urlParams.get('theatreId');
             moviedetailobj.detail(id, val);
         }
         function bookpage() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const id = urlParams.get('id');
-            const val = urlParams.get('val');
-            var url = 'http://127.0.0.1:5501/movie.html?id='+id+'&val='+val;
+            const id = urlParams.get('movieId');
+            const val = urlParams.get('theatreId');
+            var url = 'movie.html?id='+id+'&val='+val;
             window.location.href = url;
         }
  
