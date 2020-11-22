@@ -1,6 +1,7 @@
 class movieDetails {
     detail = function (id, val) {
-        var data = movieObject['' + val + ''];
+        let data = JSON.parse(localStorage.getItem("MOVIES"))[val].filter(obj=>obj.id ==id);
+        //var data = movieObject['' + val + ''];
         var mainContainer = document.getElementById('movie-details-page');
 
         for (var i = 0; i < data.length; i++) {
