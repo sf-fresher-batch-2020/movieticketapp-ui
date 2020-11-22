@@ -17,20 +17,32 @@
     </header>
     <div class="movie-page" >
        
+        <div class="inputForm">
+    
+          
+            Number of Seats : <input type="number" id="Numseats" min="1" max="144" required>
+            <br/><br/>
+            <button type="button" onclick="takeData()">Start Selecting</button>
+        
+          </div>
+        
         <div class="book-view" id="movie-book">
 
 
         </div>
     </div>
-    <div class="inputForm">
-    
-          
-          Number of Seats : <input type="number" id="Numseats" min="1" max="144" required>
-          <br/><br/>
-          <button onclick="takeData()">Start Selecting</button>
-        
-        </div>
-    <script >   
+   
+    <script >  
+
+    function getSeats(){
+        let seats=document.getElementsByName("seats");
+        let selectedSeats = [];
+        for(let s of seats){
+            if(s.checked) selectedSeats.push(s.value);
+        }
+        let noOfSeats = selectedSeats.length;
+        console.log(selectedSeats);
+    } 
         function loadmovie() {
             var showmovieobj = new ShowMovie();
             const queryString = window.location.search;
@@ -41,7 +53,7 @@
             showmovieobj.movie(id,val);
 
             {
-  $(".book-view *").prop("disabled", true);
+ // $(".book-view *").prop("disabled", true);
 }
         }
         function takeData()
@@ -52,14 +64,26 @@
   }
   else
   {
-    $(".inputForm *").prop("disabled", true);
-    $(".book-view *").prop("disabled", false);
+    //$(".inputForm *").prop("disabled", true);
+   // $(".book-view *").prop("disabled", false);
     document.getElementById("notification").innerHTML = "<b style='margin-bottom:0px;background:yellow;'>Please Select your Seats NOW!</b>";
   }
 }
 
         function booknow() {
             alert("Successfully Booked");
+            let seats=document.getElementsByName("seats");
+        let selectedSeats = [];
+        for(let s of seats){
+            if(s.checked) selectedSeats.push(parseInt(s.value));
+        }
+        let noOfSeats = selectedSeats.length;
+        console.log(selectedSeats);
+
+        let ticket = {movieId:1, theatreId:101, seats: selectedSeats, createdBy:1, createdDate: new Date().toJSON()}
+        //api/tickets (POST)
+
+        //tickets: []
         }
  
     </script>
