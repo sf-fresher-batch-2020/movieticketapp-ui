@@ -1,6 +1,6 @@
 class movieDetails {
     detail = function (id, val) {
-        let data = JSON.parse(localStorage.getItem("MOVIES"))[val].filter(obj=>obj.id ==id);
+        let data = JSON.parse(localStorage.getItem("MOVIES"))[val].filter(obj=>obj.id == id);
         //var data = movieObject['' + val + ''];
         var mainContainer = document.getElementById('movie-details-page');
 
@@ -29,7 +29,6 @@ class movieDetails {
                 btn.setAttribute('type', 'submit');
                 btn.setAttribute('value', 'Book');
                 btn.setAttribute('class', 'book-button');
-                btn.setAttribute('href','movie.html?id='+data[i].id+'&val='+val);
                 btn.setAttribute('onclick','bookpage()');
                 btn.innerHTML = 'Book';
                 indiv.appendChild(h2);
