@@ -15,77 +15,117 @@
     <header id="header">
         <!-- Load Header content-->
     </header>
-    <div class="movie-page" >
-       
+    <div class="movie-page">
+        <div id="ticket-main">
+            <span id="close" onclick="closeTicket()">X</span>
+        </div>
+
         <div class="inputForm">
-    
-          
+
+
             Number of Seats : <input type="number" id="Numseats" min="1" max="144" required>
-            <br/><br/>
+            <br /><br />
             <button type="button" onclick="takeData()">Start Selecting</button>
-        
-          </div>
-        
+
+        </div>
+
         <div class="book-view" id="movie-book">
 
 
         </div>
     </div>
-   
-    <script >  
 
-    function getSeats(){
-        let seats=document.getElementsByName("seats");
-        let selectedSeats = [];
-        for(let s of seats){
-            if(s.checked) selectedSeats.push(s.value);
+    <script>
+
+        function getSeats() {
+            let seats = document.getElementsByName("seats");
+            let selectedSeats = [];
+            for (let s of seats) {
+                if (s.checked) selectedSeats.push(s.value);
+            }
+            let noOfSeats = selectedSeats.length;
+            console.log(selectedSeats);
         }
-        let noOfSeats = selectedSeats.length;
-        console.log(selectedSeats);
-    } 
         function loadmovie() {
             var showmovieobj = new ShowMovie();
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            const id= urlParams.get('id');
-            const val= urlParams.get('val');
+            const id = urlParams.get('id');
+            const val = urlParams.get('val');
             console.log(id);
-            showmovieobj.movie(id,val);
+            showmovieobj.movie(id, val);
 
             {
- // $(".book-view *").prop("disabled", true);
-}
+                // $(".book-view *").prop("disabled", true);
+            }
         }
-        function takeData()
-{
-  if (( $("#Numseats").val().length == 0 ))
-  {
-  alert("Please Enter your Name and Number of Seats");
-  }
-  else
-  {
-    //$(".inputForm *").prop("disabled", true);
-   // $(".book-view *").prop("disabled", false);
-    document.getElementById("notification").innerHTML = "<b style='margin-bottom:0px;background:yellow;'>Please Select your Seats NOW!</b>";
-  }
-}
-
-        function booknow() {
-            alert("Successfully Booked");
-            let seats=document.getElementsByName("seats");
-        let selectedSeats = [];
-        for(let s of seats){
-            if(s.checked) selectedSeats.push(parseInt(s.value));
+        function takeData() {
+            if (($("#Numseats").val().length == 0)) {
+                alert("Please Enter your Name and Number of Seats");
+            }
+            else {
+                //$(".inputForm *").prop("disabled", true);
+                // $(".book-view *").prop("disabled", false);
+                document.getElementById("notification").innerHTML = "<b style='margin-bottom:0px;background:yellow;'>Please Select your Seats NOW!</b>";
+            }
         }
-        let noOfSeats = selectedSeats.length;
-        console.log(selectedSeats);
 
-        let ticket = {movieId:1, theatreId:101, seats: selectedSeats, createdBy:1, createdDate: new Date().toJSON()}
-        //api/tickets (POST)
+        function booknow(id, val,imgpath,mname) {
 
-        //tickets: []
+            let seats = document.getElementsByName("seats");
+            let selectedSeats = [];
+            var amount = 120;
+            for (let s of seats) {
+                if (s.checked) selectedSeats.push(parseInt(s.value));
+            }
+            let noOfSeats = selectedSeats.length;
+            console.log(selectedSeats);
+            console.log('id =' + id, 'val = ' + val);
+            amount = amount * noOfSeats;
+            let ticket = { movieId: id, theatreId: val,seats: noOfSeats, selectedSeats: selectedSeats,amount:amount, createdBy: 1, createdDate: new Date().toJSON() }
+
+            alert('Selected Seats : ' + noOfSeats + '\nSeat No\'s: ' + selectedSeats);
+            //api/tickets (POST)
+            if (noOfSeats) {
+                summary(ticket, imgpath, mname);
+
+            }
+            //tickets: []
         }
- 
+        function summary(ticket, imgpath, mname) {
+            console.log(ticket);
+            var maindiv = document.getElementById('ticket-main');
+            maindiv.style.display = "flex";
+            var img = document.createElement('img');
+            img.setAttribute('src', imgpath);
+            img.setAttribute('height', '200px');
+            img.setAttribute('width', '300px');
+            maindiv.appendChild(img);
+            var div = document.createElement('div');
+            div.setAttribute('class','ticket-details');
+            var name = document.createElement('h1');
+            var seats = document.createElement('h3');
+            var amount = document.createElement('h2');
+            var seatNumbers =  document.createElement('h3');
+            var date = document.createElement('h3');
+            seats.innerHTML = "No of seats : "+ticket['seats'];
+            seatNumbers.innerHTML = "Seats : "+ticket['selectedSeats'];
+            amount.innerHTML = "Total cost : Rs."+ticket['amount']+"/-";
+            name.innerHTML = mname;
+            date.innerHTML = "Ticket number : "+ticket['createdDate'];
+            div.appendChild(name);
+            div.appendChild(seats);
+            div.appendChild(seatNumbers);
+            div.appendChild(date);
+            div.appendChild(amount);
+            maindiv.appendChild(div);            
+        }
+
+        function closeTicket(){
+            document.getElementById('ticket-main').style.display = "none";
+            alert("Thanks for booking");
+            window.location.href = "index.html";
+        }
     </script>
     <script>
         $("#header").load("header.html");
