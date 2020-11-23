@@ -20,8 +20,7 @@ class ShowMovie {
                 btn.setAttribute('type', 'submit');
                 btn.setAttribute('value', 'Book');
                 btn.setAttribute('class', 'book-button');
-
-                btn.setAttribute('onclick', 'booknow()');
+                btn.setAttribute('onclick', 'booknow(" '+id+'","'+val+'","'+data[i].imgpath+'","'+data[i].name+'" )');
                 btn.innerHTML = 'Book';
                 indiv.appendChild(h3);
                 div.appendChild(img);
