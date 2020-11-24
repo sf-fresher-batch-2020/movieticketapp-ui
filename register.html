@@ -42,7 +42,7 @@
         <form action="#" method="POST" class="form" onsubmit="register()">
             <h1>Registration form</h1><br/><br/>
             <input class="form-input" type="text" name="username" placeholder="Name" id="name" required autofocus>
-            <input class="form-input" type="email" name="email id" placeholder="Email ID" id="email" required>
+            <input class="form-input" type="email" name="email id" placeholder="Email ID" id="email"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
             <input class="form-input" type="password" name="pass" id="password" required placeholder="Password">
             <input class="form-input" type="date" value="" id="dob" placeholder="Date of Birth">
             <div class="form-radio">
