@@ -23,5 +23,66 @@
         <script>
             $("#header").load("header.html");
         </script>
+        <script>
+
+              let serverUrl = "https://moviebooking-server.herokuapp.com/api";
+
+              function addMovie(movieId){
+           
+           console.log(movieId);
+           let Url = serverUrl + "/movies";
+           postData(Url, movieId)
+           .then(data => {
+               console.log(data); // JSON data parsed by `data.json()` call
+           });
+       }
+       async function postData(Url = '', data = {}) {
+           // Default options are marked with *
+           const response = await fetch(Url, {
+               method: 'POST', // *GET, POST, PUT, DELETE, etc.
+               mode: 'cors', // no-cors, *cors, same-origin
+               cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+               credentials: 'same-origin', // include, *same-origin, omit
+               headers: {
+                   'Content-Type': 'application/json'
+                   // 'Content-Type': 'application/x-www-form-urlencoded',
+               },
+               body: JSON.stringify(data) // body data type must match "Content-Type" header
+           });
+           return response.json(); // parses JSON response into native JavaScript objects
+       }
+
+
+             function deleteMovie(movieId){
+            console.log("Delete Movie" , movieId);
+            let cfm = confirm("Do you want to delete user?");
+            if(cfm){
+                //backend api
+                let url = serverUrl + "/movies/"+ movieId;
+                console.log(url);
+                // http://localhost:5000/api/users ( DELETE )
+                deleteData(url).then(res=>{
+                    console.log(res);
+                    alert("Successfully Deleted");
+                })
+            }
+        }
+        async function putData(url = '', data = {}) {
+            // Default options are marked with *
+            const response = await fetch(url, {
+                method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: JSON.stringify(data) // body data type must match "Content-Type" header
+            });
+            return response.json(); // parses JSON response into native JavaScript objects
+        }
+       
+        </script>
     </body>
 </html>
