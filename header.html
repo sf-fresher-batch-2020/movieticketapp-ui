@@ -8,11 +8,11 @@
             <h2>BookMyMovie</h2>
         </div>
         <div class="header-item">
-            <a id="menu-item" href="index.html" data-loggedin=false>Home</a>
-            <a id="menu-item" href="login.html" data-loggedin=false>Login</a>
+            <a class="menu-item" id="home-nav" href="index.html" >Home</a>
+            <a class="menu-item" id="login-nav" href="login.html" >Login</a>
            <!--  <a id="menu-item" href="admin.html">Admin</a> -->
-            <a id="menu-item" href="about.html" data-loggedin=false>About</a>
-            <a id="menu-item"  href="" onclick="logout()" data-loggedin=true>(Logout)</a>
+            <a class="menu-item" id="about-nav" href="about.html" >About</a>
+            <a class="menu-item"  id="logout-nav" href="" onclick="logout()" >Logout</a>
         </div>
     </div>
 </header>
@@ -21,21 +21,26 @@
     console.log("USERS", users);
     if(users){
         console.log("User is logged in");
+        document.getElementById('login-nav').style.display="none";
+        document.getElementById('logout-nav').style.display="inline";
+        document.getElementById('home-nav').style.display="inline ";
         // Hide menus which has data-loggedin=false
         // Show menus which has data-loggedin=true
-        document.querySelectorAll(".nav-link[data-loggedin=false] , .nav-item[data-loggedin=false] , .dropdown-item[data-loggedin=false]").forEach(obj => obj.style.display= "none" );
-        document.querySelectorAll(".nav-link[data-loggedin=true] , .nav-item[data-loggedin=true] , .dropdown-item[data-loggedin=true]").forEach(obj => obj.style.display= "block" );
+        // document.querySelectorAll(".nav-link[data-loggedin=false] , .nav-item[data-loggedin=false] , .dropdown-item[data-loggedin=false]").forEach(obj => obj.style.display= "none" );
+        // document.querySelectorAll(".nav-link[data-loggedin=true] , .nav-item[data-loggedin=true] , .dropdown-item[data-loggedin=true]").forEach(obj => obj.style.display= "block" );
     }
     else{
         console.log("User is not logged in");
         // Hide menus which has data-loggedin=true
         // Show menus which has data-loggedin=false
-        document.querySelectorAll(".nav-link[data-loggedin=true] , .nav-item[data-loggedin=true] , .dropdown-item[data-loggedin=true]").forEach(obj => obj.style.display= "none" );
-        document.querySelectorAll(".nav-link[data-loggedin=false] , .nav-item[data-loggedin=false] , .dropdown-item[data-loggedin=false]").forEach(obj => obj.style.display= "block" );
+        // document.querySelectorAll(".nav-link[data-loggedin=true] , .nav-item[data-loggedin=true] , .dropdown-item[data-loggedin=true]").forEach(obj => obj.style.display= "none" );
+        // document.querySelectorAll(".nav-link[data-loggedin=false] , .nav-item[data-loggedin=false] , .dropdown-item[data-loggedin=false]").forEach(obj => obj.style.display= "block" );
+        document.getElementById('logout-nav').style.display="none";
     }
     function logout(){
        // localStorage.clear();
-        localStorage.removeItem("USERS");
+        localStorage.removeItem("LOGGED_IN_USER");
         window.location.href='index.html';
+
     }
     </script>
