@@ -17,7 +17,7 @@ class movieDetails {
                 var directors = document.createElement("h4");
                 var btn = document.createElement("button");
                 img.setAttribute('src', data[i].imgpath);
-                img.setAttribute('height', '400px');
+                img.setAttribute('height', '300px');
                 img.setAttribute('width', '300px');
                 indiv.setAttribute('class', 'detail-data');
                 h2.innerHTML = data[i].name;
