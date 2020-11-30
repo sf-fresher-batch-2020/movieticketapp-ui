@@ -21,7 +21,7 @@ html{
 #header-item{
     margin-top: 1vw;
 }
-#menu-item{
+.menu-item{
     margin: 1vw;
     color:#cdf5ff;
     text-decoration:#cdf5ff;
